@@ -2,10 +2,6 @@
 
 > A macOS menu bar app that detects which apps are stealing your focus — and tells you exactly why.
 
-![macOS](https://img.shields.io/badge/macOS-13.0+-blue) ![Swift](https://img.shields.io/badge/Swift-5.9-orange) ![Status](https://img.shields.io/badge/Status-Beta-yellow)
-
----
-
 ## Why this exists
 
 Have you ever been mid-sentence, deep in thought, when some background app yanks focus to itself for a notification, an auth prompt, or no apparent reason at all?
@@ -212,7 +208,7 @@ Only when you launch it. Enable **Launch at Login** in Settings to have it start
 
 ## License
 
-[Specify your license — MIT, Apache 2.0, etc.]
+MIT
 
 ---
 
