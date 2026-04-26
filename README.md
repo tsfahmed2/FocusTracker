@@ -221,6 +221,3 @@ Issues and pull requests welcome. Please file bugs with:
 
 ---
 
-## Acknowledgments
-
-Built by Tausif Khan. Inspired by years of being interrupted at the worst possible moments.
