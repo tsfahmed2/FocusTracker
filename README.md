@@ -29,7 +29,7 @@ Focus Tracker watches every focus change on your Mac and classifies each one as 
 
 ## Installation
 
-1. Download the latest `.dmg` from [Releases](#)
+1. Download the latest `.dmg` from https://github.com/tsfahmed2/FocusTracker/releases
 2. Open the DMG and drag **Focus Tracker** to Applications
 3. Launch from `/Applications/Focus Tracker.app`
 4. The onboarding window will guide you through granting two permissions
