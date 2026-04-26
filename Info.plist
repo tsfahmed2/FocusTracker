@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- ── Identity ────────────────────────────────────────────────── -->
+    <key>CFBundleIdentifier</key>
+    <string>com.khan.FocusTracker</string>
+
+    <key>CFBundleName</key>
+    <string>Focus Tracker</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>Focus Tracker</string>
+
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>2.0.0</string>
+
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <!-- ── Menu bar app: no Dock icon ──────────────────────────────── -->
+    <key>LSUIElement</key>
+    <true/>
+
+    <!-- ── Minimum OS ───────────────────────────────────────────────── -->
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+
+    <!-- ── Permission usage strings (macOS shows these in dialogs) ─── -->
+    <!-- Accessibility: this string appears in the system permission prompt
+         and in System Settings → Privacy & Security → Accessibility. -->
+    <key>NSAccessibilityUsageDescription</key>
+    <string>Focus Tracker uses Accessibility to read the title of the window that takes focus, so you can identify exactly which dialog or notification is responsible.</string>
+
+    <!--
+    Note on Input Monitoring: macOS does NOT honour any Info.plist string
+    for Input Monitoring. The system dialog text is fixed by macOS. We
+    document our usage in the Onboarding window and in our notarization
+    submission instead.
+
+    We deliberately do NOT include NSAppleEventsUsageDescription —
+    we don't actually use AppleEvents (Apple's notarization may flag
+    this as a misleading declaration if present without a corresponding
+    use of the API).
+    -->
+
+    <!-- ── App category (for Spotlight / Gatekeeper UI) ──────────────── -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.utilities</string>
+
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    Direct distribution (not App Store) — no sandbox.
+
+    The App Store requires sandboxing, which blocks CGEvent.tapCreate
+    (Input Monitoring) and AXUIElement cross-process calls. We ship as
+    a notarized DMG instead.
+
+    Notes for future maintainers:
+
+    • The "temporary-exception" entitlements (mach-lookup, apple-events)
+      are Sandbox-only. With app-sandbox=false they are no-ops, so we
+      removed them rather than carrying noise through notarization
+      review.
+
+    • Unsandboxed apps with Hardened Runtime can call CGEvent.tapCreate
+      and AXUIElementCopyAttributeValue WITHOUT any extra entitlement.
+      The user's Privacy & Security grant is what authorises the call,
+      not an entitlement.
+
+    • Notarization will succeed with this minimal config as long as
+      Hardened Runtime is enabled in the build settings. Apple's
+      notarization service does not require an explicit declaration
+      for Input Monitoring or Accessibility usage — those are gated
+      at runtime by TCC, not at notarization.
+    -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+</dict>
+</plist>

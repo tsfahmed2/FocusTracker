@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 72" width="1152" height="288">
+  <!--
+    Focus Tracker — Menu Bar Icon Design Reference
+    
+    Four states, left to right:
+      1. Idle (18×18 pt)           — monochrome eye, no badge
+      2. Recent Steal (18×18 pt)   — orange eye + orange dot with "!"
+      3. Sustained (18×18 pt)      — red eye + red dot with count
+      4. Needs Permission (18×18)  — muted eye + yellow "?" dot
+    
+    Export each 72×72 group as a separate PDF for the Xcode asset catalog:
+      AppIcon-Idle.pdf
+      AppIcon-Alert.pdf
+      AppIcon-Sustained.pdf
+      AppIcon-Permission.pdf
+    
+    In Xcode: Assets.xcassets → New Image Set for each.
+    Set "Scales" to "Single Scale" and drag the PDF in.
+    Use these image names in MenuBarIconManager as a fallback to
+    the programmatic drawing (or replace it entirely).
+  -->
+
+  <!-- ─── 1. IDLE ─────────────────────────────────────────────────────── -->
+  <g id="idle" transform="translate(0,0)">
+    <!-- Background (transparent in production) -->
+    <rect width="72" height="72" fill="#f5f5f7" rx="8"/>
+
+    <!-- Eye outline — drawn as a single path for template compatibility -->
+    <!-- Outer eye shape (almond) -->
+    <path d="M 36 22
+             C 20 22 10 36 10 36
+             C 10 36 20 50 36 50
+             C 52 50 62 36 62 36
+             C 62 36 52 22 36 22 Z"
+          fill="none" stroke="#1d1d1f" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Iris -->
+    <circle cx="36" cy="36" r="9"
+            fill="none" stroke="#1d1d1f" stroke-width="3.5"/>
+
+    <!-- Pupil -->
+    <circle cx="36" cy="36" r="3.5" fill="#1d1d1f"/>
+
+    <!-- Upper lash lines (subtle) -->
+    <line x1="24" y1="25" x2="22" y2="21" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round"/>
+    <line x1="36" y1="22" x2="36" y2="18" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round"/>
+    <line x1="48" y1="25" x2="50" y2="21" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- State label -->
+    <text x="36" y="67" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="8" fill="#6e6e73">Idle</text>
+  </g>
+
+  <!-- ─── 2. RECENT STEAL ───────────────────────────────────────────────── -->
+  <g id="recent-steal" transform="translate(72,0)">
+    <rect width="72" height="72" fill="#f5f5f7" rx="8"/>
+
+    <!-- Eye — orange tint -->
+    <path d="M 36 22
+             C 20 22 10 36 10 36
+             C 10 36 20 50 36 50
+             C 52 50 62 36 62 36
+             C 62 36 52 22 36 22 Z"
+          fill="none" stroke="#ff6b00" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="36" r="9"
+            fill="none" stroke="#ff6b00" stroke-width="3.5"/>
+    <circle cx="36" cy="36" r="3.5" fill="#ff6b00"/>
+
+    <!-- Lashes — orange -->
+    <line x1="24" y1="25" x2="22" y2="21" stroke="#ff6b00" stroke-width="2" stroke-linecap="round"/>
+    <line x1="36" y1="22" x2="36" y2="18" stroke="#ff6b00" stroke-width="2" stroke-linecap="round"/>
+    <line x1="48" y1="25" x2="50" y2="21" stroke="#ff6b00" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Badge: filled orange circle with "!" -->
+    <circle cx="56" cy="20" r="9" fill="#ff6b00"/>
+    <!-- White border so badge reads on any menu bar -->
+    <circle cx="56" cy="20" r="10" fill="none" stroke="white" stroke-width="2"/>
+    <text x="56" y="24" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="14" font-weight="bold"
+          fill="white">!</text>
+
+    <text x="36" y="67" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="8" fill="#6e6e73">Recent Steal</text>
+  </g>
+
+  <!-- ─── 3. SUSTAINED ─────────────────────────────────────────────────── -->
+  <g id="sustained" transform="translate(144,0)">
+    <rect width="72" height="72" fill="#f5f5f7" rx="8"/>
+
+    <!-- Eye — red -->
+    <path d="M 36 22
+             C 20 22 10 36 10 36
+             C 10 36 20 50 36 50
+             C 52 50 62 36 62 36
+             C 62 36 52 22 36 22 Z"
+          fill="none" stroke="#ff3b30" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="36" r="9"
+            fill="none" stroke="#ff3b30" stroke-width="3.5"/>
+    <circle cx="36" cy="36" r="3.5" fill="#ff3b30"/>
+
+    <!-- Lashes — red -->
+    <line x1="24" y1="25" x2="22" y2="21" stroke="#ff3b30" stroke-width="2" stroke-linecap="round"/>
+    <line x1="36" y1="22" x2="36" y2="18" stroke="#ff3b30" stroke-width="2" stroke-linecap="round"/>
+    <line x1="48" y1="25" x2="50" y2="21" stroke="#ff3b30" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Badge: filled red circle with count "5" (example) -->
+    <circle cx="56" cy="20" r="10" fill="#ff3b30"/>
+    <circle cx="56" cy="20" r="11" fill="none" stroke="white" stroke-width="2"/>
+    <text x="56" y="24.5" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="12" font-weight="bold"
+          fill="white">5</text>
+
+    <text x="36" y="67" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="8" fill="#6e6e73">Sustained</text>
+  </g>
+
+  <!-- ─── 4. NEEDS PERMISSION ──────────────────────────────────────────── -->
+  <g id="needs-permission" transform="translate(216,0)">
+    <rect width="72" height="72" fill="#f5f5f7" rx="8"/>
+
+    <!-- Eye — muted gray -->
+    <path d="M 36 22
+             C 20 22 10 36 10 36
+             C 10 36 20 50 36 50
+             C 52 50 62 36 62 36
+             C 62 36 52 22 36 22 Z"
+          fill="none" stroke="#aeaeb2" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="36" r="9"
+            fill="none" stroke="#aeaeb2" stroke-width="3.5"/>
+    <circle cx="36" cy="36" r="3.5" fill="#aeaeb2"/>
+
+    <!-- Lashes — muted -->
+    <line x1="24" y1="25" x2="22" y2="21" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round"/>
+    <line x1="36" y1="22" x2="36" y2="18" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round"/>
+    <line x1="48" y1="25" x2="50" y2="21" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Badge: yellow dot with "?" -->
+    <circle cx="56" cy="20" r="9" fill="#ffd60a"/>
+    <circle cx="56" cy="20" r="10" fill="none" stroke="white" stroke-width="2"/>
+    <text x="56" y="24" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="13" font-weight="bold"
+          fill="#1d1d1f">?</text>
+
+    <text x="36" y="67" text-anchor="middle"
+          font-family="-apple-system, sans-serif" font-size="8" fill="#6e6e73">Needs Permission</text>
+  </g>
+</svg>
